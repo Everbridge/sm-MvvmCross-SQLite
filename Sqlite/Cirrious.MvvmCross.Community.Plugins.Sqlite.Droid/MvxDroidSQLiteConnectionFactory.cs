@@ -24,9 +24,11 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite.Droid
             return Path.Combine(path1, path2);
         }
 
-        protected override ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks)
+        protected override ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks, string key = null)
         {
-            return new SQLiteConnection(databasePath, storeDateTimeAsTicks);
+            return string.IsNullOrEmpty(key) ?
+                new SQLiteConnection(databasePath, storeDateTimeAsTicks) :
+                new SQLiteConnection(databasePath, key, storeDateTimeAsTicks);
         }
     }
 }

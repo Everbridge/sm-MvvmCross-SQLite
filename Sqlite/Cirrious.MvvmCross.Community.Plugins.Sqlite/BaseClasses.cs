@@ -957,7 +957,7 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
                 throw new ArgumentException(Properties.Resources.CreateFileDbInvalidAddress);
             var path = options.BasePath ?? GetDefaultBasePath();
             string filePath = LocalPathCombine(path, options.Address);
-            return CreateSQLiteConnection(filePath, options.StoreDateTimeAsTicks);
+            return CreateSQLiteConnection(filePath, options.StoreDateTimeAsTicks, options.Key);
         }
 
         private ISQLiteConnection CreateInMemoryDb(SQLiteConnectionOptions options)
@@ -1003,6 +1003,6 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
         /// will not.
         /// </param>
         /// <returns>Returns the interface to a SQLiteConnection.</returns>
-        protected abstract ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks);
+        protected abstract ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks, string key = null);
     }
 }
