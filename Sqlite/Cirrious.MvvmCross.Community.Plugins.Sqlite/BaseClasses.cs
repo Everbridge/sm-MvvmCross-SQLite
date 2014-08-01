@@ -30,6 +30,7 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
 		/// The name of the database file.
 		/// </summary>
         public string Address { get; set; }
+        public string Key { get; set; }
         /// <summary>
         /// The base path1 to use in conjunction with the Address to create 
         /// the full location to store the database file.
@@ -97,7 +98,7 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
         /// <remarks>The provide path2 will override any provided in the options.</remarks>
         /// <param name="options">The options to use to create a SQLite connection.</param>
         /// <returns>A ISQLiteConnection.</returns>
-        ISQLiteConnection CreateEx(string address, SQLiteConnectionOptions options = null);
+        ISQLiteConnection CreateEx(string address, string key = null, SQLiteConnectionOptions options = null);
     }
 
     public interface ISQLiteConnectionFactory
@@ -107,7 +108,7 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
         /// </summary>
         /// <param name="address">Address for the database.</param>
         /// <returns>A ISQLiteConnection.</returns>
-        ISQLiteConnection Create(string address);
+        ISQLiteConnection Create(string address, string key = null);
         /// <summary>
         /// Creates a in-memory SQLite database.
         /// </summary>
@@ -257,6 +258,11 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
         {
             Value = collation;
         }
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class NotNullAttribute : Attribute
+    {
     }
 
     public interface ITableMapping
@@ -905,9 +911,9 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
     {
         private const string InMemoryDatabase = ":memory:";
 
-        public virtual ISQLiteConnection Create(string address)
+        public virtual ISQLiteConnection Create(string address, string key = null)
         {
-            return CreateEx(address);
+            return CreateEx(address, key);
         }
 
         public virtual ISQLiteConnection CreateInMemory()
@@ -937,10 +943,11 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite
             }
         }
 
-        public virtual ISQLiteConnection CreateEx(string address, SQLiteConnectionOptions options = null)
+        public virtual ISQLiteConnection CreateEx(string address, string key = null, SQLiteConnectionOptions options = null)
         {
             options = options ?? new SQLiteConnectionOptions();
             options.Address = address;
+            options.Key = key;
             return CreateEx(options);
         }
 
