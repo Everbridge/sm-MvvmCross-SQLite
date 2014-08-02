@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>False</Optimize>
     <OutputPath>..\..\bin\Debug\Mvx\Droid\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;USE_SQLCIPHER_SQLITE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
