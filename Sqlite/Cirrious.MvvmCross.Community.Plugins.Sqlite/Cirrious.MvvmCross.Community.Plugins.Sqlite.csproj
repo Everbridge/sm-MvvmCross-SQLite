@@ -34,6 +34,26 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\bin\Release\Mvx\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
+    <DocumentationFile>..\..\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\..\bin\Release\Mvx\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="BaseClasses.cs" />
     <Compile Include="PluginLoader.cs" />
