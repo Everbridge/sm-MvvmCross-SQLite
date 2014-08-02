@@ -3287,7 +3287,7 @@ namespace Community.SQLite
 #if USE_SQLCIPHER_SQLITE
 #if __ANDROID__
 		// use sqlcipher dynamic library on android 
-		private const string SQLITE_DLL = "sqlcipher";
+		private const string SQLITE_DLL = "sqlcipher_android";
 #elif SQLCIPHER_WINRT
 	    private const string SQLITE_DLL = "sqlite3.dll";
 #else
