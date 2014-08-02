@@ -7,6 +7,7 @@
 
 using System;
 using System.IO;
+using Windows.Storage;
 using Community.SQLite;
 using CommonResources = Cirrious.MvvmCross.Community.Plugins.Sqlite.Properties.Resources;
 
@@ -17,7 +18,7 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsPhone
     {
         protected override string GetDefaultBasePath()
         {
-            return string.Empty;
+            return ApplicationData.Current.LocalFolder.Path;
         }
 
         protected override string LocalPathCombine(string path1, string path2)
@@ -25,9 +26,11 @@ namespace Cirrious.MvvmCross.Community.Plugins.Sqlite.WindowsPhone
             return Path.Combine(path1, path2);
         }
 
-        protected override ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks)
+        protected override ISQLiteConnection CreateSQLiteConnection(string databasePath, bool storeDateTimeAsTicks, string key = null)
         {
-            return new SQLiteConnection(databasePath, storeDateTimeAsTicks);
+            return string.IsNullOrEmpty(key) ?
+                new SQLiteConnection(databasePath, storeDateTimeAsTicks) :
+                new SQLiteConnection(databasePath, key, storeDateTimeAsTicks);
         }
     }
 }
