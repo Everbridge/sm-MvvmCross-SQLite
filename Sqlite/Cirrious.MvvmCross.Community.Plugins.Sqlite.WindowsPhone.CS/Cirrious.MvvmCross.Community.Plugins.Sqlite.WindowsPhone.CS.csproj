@@ -68,7 +68,7 @@
     <PlatformTarget>
     </PlatformTarget>
     <OutputPath>Bin\x86\Debug</OutputPath>
-    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
     <NoStdLib>true</NoStdLib>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -78,7 +78,7 @@
     <PlatformTarget>
     </PlatformTarget>
     <OutputPath>Bin\x86\Release</OutputPath>
-    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;USE_CSHARP_SQLITE</DefineConstants>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
     <Optimize>true</Optimize>
     <NoStdLib>true</NoStdLib>
     <DebugType>pdbonly</DebugType>
