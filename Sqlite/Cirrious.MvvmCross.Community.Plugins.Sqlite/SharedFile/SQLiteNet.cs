@@ -3290,8 +3290,10 @@ namespace Community.SQLite
 		private const string SQLITE_DLL = "sqlcipher_android";
 #elif SQLCIPHER_WINRT
 	    private const string SQLITE_DLL = "sqlite3.dll";
+#elif SQLCIPHER_WPF
+	    private const string SQLITE_DLL = @"binaries\sqlite3.dll";
 #else
-		// use static link library under iOS
+        // use static link library under iOS
 		private const string SQLITE_DLL = "__Internal";
 #endif
 		[DllImport(SQLITE_DLL, EntryPoint = "sqlite3_key", CallingConvention=CallingConvention.Cdecl)]

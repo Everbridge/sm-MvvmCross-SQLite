@@ -10,8 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Cirrious.MvvmCross.Community.Plugins.Sqlite</RootNamespace>
     <AssemblyName>Cirrious.MvvmCross.Community.Plugins.Sqlite</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile158</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -22,7 +22,7 @@
     <OutputPath>..\..\bin\Debug\Mvx\Portable\</OutputPath>
     <DefineConstants>TRACE;DEBUG;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <DocumentationFile>..\..\bin\Debug\Mvx\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +31,7 @@
     <OutputPath>..\..\bin\Release\Mvx\Portable\</OutputPath>
     <DefineConstants>TRACE;USE_WP8_NATIVE_SQLITE;USE_SQLCIPHER_SQLITE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <DocumentationFile>..\..\bin\Release\Mvx\Portable\Cirrious.MvvmCross.Community.Plugins.Sqlite.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
@@ -43,6 +43,8 @@
     <PlatformTarget>ARM</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>0</WarningLevel>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <OutputPath>bin\ARM\Release\</OutputPath>
@@ -53,6 +55,7 @@
     <PlatformTarget>ARM</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BaseClasses.cs" />
